@@ -11,10 +11,13 @@ def line(deli)
   end
 end 
 
-def take_a_number(deli, name)
-  deli << name 
-  num = deli.find_index(name)
-  puts "Welcome, #{name}. You are number #{num + 1} in line."
+def take_a_number(deli)
+  if deli.empty?
+    deli << 1 
+  end 
+  last_person = deli.last + 1
+  deli << last_person 
+  puts "Welcome. You are number #{last_person} in line."
 end 
 
 def now_serving(deli)
